@@ -1,1 +1,17 @@
-h1 show
+extends ../shared/template
+block content
+  h1= country.name
+  table
+    tr
+      td
+        label.createLabelWidth Photo:
+        img(src=country.photos[0]).createPhoto
+    tr
+      td
+        label.createLabelWidth Cities:
+        each city in country.cities
+          label= city.name
+    tr
+      td
+        label.createLabelWidth Balance:
+        label= country.balance
