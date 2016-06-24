@@ -1,3 +1,8 @@
 extends ../shared/template
 block content
-  h1 People
+  h1 People - we will start listing them
+  ul
+    each person in people
+      li
+        a(href=`/person/${person.id}/show`)= person.name
+      img(src=person.photo).indexImg
