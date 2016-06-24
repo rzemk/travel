@@ -1,6 +1,8 @@
 extends ../shared/template
 block content
-  h1 People - we will start listing them
+  h1 People
+  a(href="/person/new") Create a new person
+  p
   ul
     each person in people
       li

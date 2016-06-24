@@ -1,11 +1,13 @@
-/* eslint-disable new-cap */
+/* eslint-disable new-cap, array-callback-return */
 
 import express from 'express';
 import Person from '../models/person';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('person/index');
+  Person.find((err, people) => {
+    res.render('person/index', { people });
+  });
 });
 
 router.get('/new', (req, res) => {
@@ -20,5 +22,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id/show', (req, res) => {
-  res.render('person/show');
+  Person.findById(req.params.id, (err, person) => {
+    res.render('person/show', { person });
+  });
 });

@@ -5,25 +5,20 @@ block content
     tr
       td
         label.createLabelWidth Name:
-        input#name(type='text', name='name').createControlWidth
+        label= person.name
     tr
       td
         label.createLabelWidth Age:
-        input#age(type='text', name='age').createControlWidth
+        label= person.age
     tr
       td
         label.createLabelWidth Gender:
-        select#gender(name='gender').createControlWidth
-          option(value='male') Male
-          option(value='female') Female
+        label= person.gender
     tr
       td
-        label.createLabelWidth Money:
-        input#money(type='text' name='money').createControlWidth
+        label.createLabelWidth Balance:
+        label= person.balance
     tr
       td
         label.createLabelWidth Photo:
-        input#photo(type='text' name='photo').createControlWidth
-    tr
-      td
         img(src='/images/person/silhouette.jpg').createPhoto
