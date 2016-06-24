@@ -1,11 +1,13 @@
-/* eslint-disable new-cap */
+/* eslint-disable new-cap, array-callback-return  */
 
 import express from 'express';
 import Country from '../models/country';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('countries/index');
+  Country.find((err, countries) => {
+    res.render('countries/index', { countries });
+  });
 });
 
 router.get('/new', (req, res) => {

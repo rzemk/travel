@@ -1,1 +1,10 @@
-h1 index
+extends ../shared/template
+block content
+  h1 Countries
+  a(href="/countries/new") Create a new Country
+  p
+  ul.countries-list
+    each country in countries
+      li
+        a(href=`/countries/${country.id}/show`)= country.name
+      img(src=country.photos[0]).indexImg 
