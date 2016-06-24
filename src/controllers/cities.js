@@ -2,6 +2,7 @@
 
 import express from 'express';
 import City from '../models/city';
+import Country from '../models/country';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
@@ -11,7 +12,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('cities/new');
+  Country.find((err, countries) => {
+    res.render('cities/new', { countries });
+  });
 });
 
 router.post('/', (req, res) => {

@@ -9,6 +9,11 @@ block content
             label.createLabelWidth Name:
             input#cityName(type='text', name='name').createControlWidth
           .form-group
+            label.createLabelWidth Country:
+            select(name='country')
+              each country in countries
+                option(value=country.id)= country.name
+          .form-group
             label.createLabelWidth Amount:
             input#cityBalance(type='number', name='amount').createControlWidth
           .form-group

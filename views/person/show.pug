@@ -22,3 +22,8 @@ block content
       td
         label.createLabelWidth Photo:
         img(src=person.photo).createPhoto
+
+    each city in person.cities
+      li
+        a(href=`/cities/${city.id}/show`)= city.name
+      img(src=city.photos[0]).indexImg
