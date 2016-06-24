@@ -1,21 +1,28 @@
 extends ../shared/template
 block content
   h1 Create a new person
-  form(action='/person', method='post')
-    .form-group
-      label.createWidth Name:
-      input#name(type='text')
-    .form-group
-      label.createWidth Age:
-      input#age(type='text')
-    .form-group
-      label.createWidth Gender:
-      input#gender(type='text')
-    .form-group
-      label.createWidth Money:
-      input#money(type='text')
-    .form-group
-      label.createWidth Photo:
-      input#photo(type='text' name='photo')
-    .form-group
-      button.btn.btn-final(type='submit') Submit
+  table
+    tr
+      td
+        form(action='/person', method='post').formTopPad
+          .form-group
+            label.createLabelWidth Name:
+            input#name(type='text', name='name').createControlWidth
+          .form-group
+            label.createLabelWidth Age:
+            input#age(type='text', name='age').createControlWidth
+          .form-group
+            label.createLabelWidth Gender:
+            select#gender(name='gender').createControlWidth
+                option(value='male') Male
+                option(value='female') Female
+          .form-group
+            label.createLabelWidth Money:
+            input#money(type='text' name='money').createControlWidth
+          .form-group
+            label.createLabelWidth Photo:
+            input#photo(type='text' name='photo').createControlWidth
+          .form-group
+            button.btn.btn-final(type='submit') Submit
+      td
+        img(src='/images/person/silhouette.jpg').createPhoto
