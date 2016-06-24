@@ -1,0 +1,21 @@
+extends ../shared/template
+block content
+  h1 Create a new person
+  form(action='/person', method='post')
+    .form-group
+      label.createWidth Name:
+      input#name(type='text')
+    .form-group
+      label.createWidth Age:
+      input#age(type='text')
+    .form-group
+      label.createWidth Gender:
+      input#gender(type='text')
+    .form-group
+      label.createWidth Money:
+      input#money(type='text')
+    .form-group
+      label.createWidth Photo:
+      input#photo(type='text' name='photo')
+    .form-group
+      button.btn.btn-final(type='submit') Submit
