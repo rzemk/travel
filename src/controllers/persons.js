@@ -1,7 +1,6 @@
 /* eslint-disable new-cap */
 
 import express from 'express';
-import Person from '../models/person';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
@@ -12,9 +11,11 @@ router.get('/new', (req, res) => {
   res.render('person/new');
 });
 
+router.get('/index', (req, res) => {
+  res.render('person/index');
+});
+
 router.post('/', (req, res) => {
-  const person = new Person(req.body);
-  person.save();
   res.redirect('/person');
 });
 
