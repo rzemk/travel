@@ -14,8 +14,9 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const person = new Person(req.body);
-  person.save();
-  res.redirect('/person');
+  person.save(() => {
+    res.redirect('/person');
+  });
 });
 
 router.get('/:id/show', (req, res) => {
