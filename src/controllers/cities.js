@@ -31,6 +31,9 @@ router.post('/', (req, res) => {
 
 router.get('/:id/show', (req, res) => {
   City.findById(req.params.id, (err, city) => {
+    // city.getWeather((err2, weather) => {
+      // res.render('cities/show', { city, weather });
     res.render('cities/show', { city });
+    // });
   });
 });
