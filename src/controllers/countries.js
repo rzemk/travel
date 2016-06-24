@@ -22,5 +22,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id/show', (req, res) => {
-  res.render('countries/show');
+  Country.findById(req.params.id, (err, country) => {
+    res.render('countries/show', { country });
+  });
 });
