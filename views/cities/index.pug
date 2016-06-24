@@ -1,0 +1,10 @@
+extends ../shared/template
+block content
+  h1 Cities
+  a(href="/cities/new") Create a new city
+  p
+  ul
+    each city in cities
+      li
+        a(href=`/cities/${city.id}/show`)= city.name
+      img(src=city.photos[0]).indexImg

@@ -1,0 +1,20 @@
+extends ../shared/template
+block content
+  h1 City details
+  table
+    tr
+      td
+        label.createLabelWidth Name:
+        label= city.name
+    tr
+      td
+        label.createLabelWidth Country:
+        label= city.country
+    tr
+      td
+        label.createLabelWidth Amount:
+        label= city.amount
+    tr
+      td
+        label.createLabelWidth Photo:
+          img(src=city.photos[0]).createPhoto

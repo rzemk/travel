@@ -1,0 +1,18 @@
+extends ../shared/template
+block content
+  h1 Create a new city
+  table
+    tr
+      td
+        form(action='/cities', method='post').formTopPad
+          .form-group
+            label.createLabelWidth Name:
+            input#cityName(type='text', name='name').createControlWidth
+          .form-group
+            label.createLabelWidth Balance:
+            input#cityBalance(type='number', name='balance').createControlWidth
+          .form-group
+            label.createLabelWidth Photos:
+            input#cityPhotos(type='text', name='photos').createControlWidth
+          .form-group
+            button.btn.btn-final(type='submit') Submit
