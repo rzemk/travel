@@ -20,7 +20,12 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
   const city = new City(req.body);
   city.save(() => {
-    res.redirect('/cities');
+    Country.findById(city.country, (err, country) => {
+      country.cities.push(city.id);
+      country.update({ cities: country.cities }, () => {
+        res.redirect('/cities');
+      });
+    });
   });
 });
 
