@@ -9,7 +9,16 @@ block content
     tr
       td
         label.createLabelWidth Country:
-        label= city.country
+        label= city.country.name
+    tr
+      td
+        label.createLabelWidth Current temp:
+        label= weather.temperature
+        span degrees(?)
+    tr
+      td
+        label.createLabelWidth Current weather:
+        label= weather.descriptions
     tr
       td
         label.createLabelWidth Amount:
